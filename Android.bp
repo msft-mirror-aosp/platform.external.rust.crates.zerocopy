@@ -3,16 +3,16 @@
 
 
 
-rust_library {
+rust_library_rlib {
     name: "libzerocopy",
-    host_supported: true,
     crate_name: "zerocopy",
     cargo_env_compat: true,
     cargo_pkg_version: "0.6.1",
     srcs: ["src/lib.rs"],
     edition: "2018",
+    no_stdlibs: true,
     rustlibs: [
-        "libbyteorder",
+        "libbyteorder_nostd",
     ],
     proc_macros: ["libzerocopy_derive"],
     apex_available: [
@@ -23,16 +23,12 @@ rust_library {
 
 rust_test {
     name: "zerocopy_test_src_lib",
-    host_supported: true,
     crate_name: "zerocopy",
     cargo_env_compat: true,
     cargo_pkg_version: "0.6.1",
     srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
-    test_options: {
-        unit_test: true,
-    },
     edition: "2018",
     rustlibs: [
         "libbyteorder",
