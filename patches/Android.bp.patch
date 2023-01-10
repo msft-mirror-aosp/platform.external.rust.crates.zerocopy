@@ -1,0 +1,15 @@
+diff --git a/Android.bp b/Android.bp
+index 97a1493..314d50b 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -10,8 +10,9 @@ rust_library_rlib {
+     cargo_pkg_version: "0.6.1",
+     srcs: ["src/lib.rs"],
+     edition: "2018",
++    no_stdlibs: true,
+     rustlibs: [
+-        "libbyteorder",
++        "libbyteorder_nostd",
+     ],
+     proc_macros: ["libzerocopy_derive"],
+     apex_available: [
