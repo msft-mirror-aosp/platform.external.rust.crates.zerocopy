@@ -38,6 +38,31 @@ rust_library {
     vendor_available: true,
 }
 
+rust_library_rlib {
+    name: "libzerocopy_nostd",
+    crate_name: "zerocopy",
+    cargo_env_compat: true,
+    cargo_pkg_version: "0.6.1",
+    srcs: ["src/lib.rs"],
+    edition: "2018",
+    rustlibs: [
+        "libbyteorder_nostd",
+    ],
+    proc_macros: ["libzerocopy_derive"],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    prefer_rlib: true,
+    no_stdlibs: true,
+    stdlibs: [
+        "libcompiler_builtins.rust_sysroot",
+        "libcore.rust_sysroot",
+    ],
+    product_available: true,
+    vendor_available: true,
+}
+
 rust_test {
     name: "zerocopy_test_src_lib",
     host_supported: true,
@@ -57,22 +82,3 @@ rust_test {
     ],
     proc_macros: ["libzerocopy_derive"],
 }
-
-rust_library_rlib {
-    name: "libzerocopy_nostd",
-    crate_name: "zerocopy",
-    cargo_env_compat: true,
-    cargo_pkg_version: "0.6.1",
-    srcs: ["src/lib.rs"],
-    edition: "2018",
-    no_stdlibs: true,
-    rustlibs: [
-        "libbyteorder_nostd",
-    ],
-    proc_macros: ["libzerocopy_derive"],
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-}
-
