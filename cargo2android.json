@@ -6,7 +6,9 @@
       "tests": true
     },
     {
+      "alloc": true,
       "dependency-suffix": "_nostd",
+      "features": "alloc",
       "force-rlib": true,
       "no-host": true,
       "suffix": "_nostd",
