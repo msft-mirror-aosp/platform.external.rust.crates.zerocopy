@@ -45,6 +45,7 @@ rust_library_rlib {
     cargo_pkg_version: "0.6.1",
     srcs: ["src/lib.rs"],
     edition: "2018",
+    features: ["alloc"],
     rustlibs: [
         "libbyteorder_nostd",
     ],
@@ -56,6 +57,7 @@ rust_library_rlib {
     prefer_rlib: true,
     no_stdlibs: true,
     stdlibs: [
+        "liballoc.rust_sysroot",
         "libcompiler_builtins.rust_sysroot",
         "libcore.rust_sysroot",
     ],
