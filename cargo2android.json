@@ -13,6 +13,13 @@
       "no-host": true,
       "suffix": "_nostd",
       "no-std": true
+    },
+    {
+      "dependency-suffix": "_nostd",
+      "force-rlib": true,
+      "no-host": true,
+      "suffix": "_nostd_noalloc",
+      "no-std": true
     }
   ]
 }
