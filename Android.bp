@@ -23,14 +23,9 @@ rust_library {
     host_supported: true,
     crate_name: "zerocopy",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.7.5",
+    cargo_pkg_version: "0.6.1",
     srcs: ["src/lib.rs"],
-    edition: "2021",
-    features: [
-        "byteorder",
-        "derive",
-        "zerocopy-derive",
-    ],
+    edition: "2018",
     rustlibs: [
         "libbyteorder",
     ],
@@ -47,15 +42,10 @@ rust_library_rlib {
     name: "libzerocopy_nostd",
     crate_name: "zerocopy",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.7.5",
+    cargo_pkg_version: "0.6.1",
     srcs: ["src/lib.rs"],
-    edition: "2021",
-    features: [
-        "alloc",
-        "byteorder",
-        "derive",
-        "zerocopy-derive",
-    ],
+    edition: "2018",
+    features: ["alloc"],
     rustlibs: [
         "libbyteorder_nostd",
     ],
@@ -79,14 +69,9 @@ rust_library_rlib {
     name: "libzerocopy_nostd_noalloc",
     crate_name: "zerocopy",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.7.5",
+    cargo_pkg_version: "0.6.1",
     srcs: ["src/lib.rs"],
-    edition: "2021",
-    features: [
-        "byteorder",
-        "derive",
-        "zerocopy-derive",
-    ],
+    edition: "2018",
     rustlibs: [
         "libbyteorder_nostd",
     ],
@@ -103,4 +88,24 @@ rust_library_rlib {
     ],
     product_available: true,
     vendor_available: true,
+}
+
+rust_test {
+    name: "zerocopy_test_src_lib",
+    host_supported: true,
+    crate_name: "zerocopy",
+    cargo_env_compat: true,
+    cargo_pkg_version: "0.6.1",
+    srcs: ["src/lib.rs"],
+    test_suites: ["general-tests"],
+    auto_gen_config: true,
+    test_options: {
+        unit_test: true,
+    },
+    edition: "2018",
+    rustlibs: [
+        "libbyteorder",
+        "librand",
+    ],
+    proc_macros: ["libzerocopy_derive"],
 }
