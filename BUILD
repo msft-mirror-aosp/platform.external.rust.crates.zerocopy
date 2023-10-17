@@ -32,6 +32,11 @@ license_kind(
 rust_library(
     name = "zerocopy",
     srcs = glob(["**/*.rs"]),
+    crate_features = [
+        "byteorder",
+        "derive",
+        "zerocopy-derive",
+    ],
     edition = "2021",
     proc_macro_deps = [
         # This should map to repo checked out from Android third party project
