@@ -1,7 +1,7 @@
 {
   "device": true,
   "run": true,
-  "features": "derive,byteorder",
+  "features": "derive,byteorder,simd",
   "variants": [
     {
       "tests": false
@@ -9,7 +9,7 @@
     {
       "alloc": true,
       "dependency-suffix": "_nostd",
-      "features": "alloc,derive,byteorder",
+      "features": "alloc,derive,byteorder,simd",
       "force-rlib": true,
       "no-host": true,
       "suffix": "_nostd",
@@ -17,7 +17,7 @@
     },
     {
       "dependency-suffix": "_nostd",
-      "features": "derive,byteorder",
+      "features": "derive,byteorder,simd",
       "force-rlib": true,
       "no-host": true,
       "suffix": "_nostd_noalloc",
