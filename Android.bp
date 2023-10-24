@@ -29,6 +29,7 @@ rust_library {
     features: [
         "byteorder",
         "derive",
+        "simd",
         "zerocopy-derive",
     ],
     rustlibs: [
@@ -54,6 +55,7 @@ rust_library_rlib {
         "alloc",
         "byteorder",
         "derive",
+        "simd",
         "zerocopy-derive",
     ],
     rustlibs: [
@@ -85,6 +87,7 @@ rust_library_rlib {
     features: [
         "byteorder",
         "derive",
+        "simd",
         "zerocopy-derive",
     ],
     rustlibs: [
